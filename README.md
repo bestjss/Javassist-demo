@@ -28,3 +28,19 @@ Demo Say ： 'Hello world'
 耗时:
 317
 ```
+
+- 远程调试模式
+
+启动命令加上-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n
+    
+- -XDebug:启动调试
+- -Xrunjdwp: 加载JDWP的JPDA参考执行实例
+- transport：用于在调试程序和远程应用服务使用的进程通信
+- dt_socket: 套接字传输
+- address=8000 :远程调试服务监听的端口号
+- suspend=y/n : 在调试客户端建立连接之后挂起或启动应用服务
+
+```shell script
+# 例子 Springboot 服务
+java -jar project.jar Java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n
+```

@@ -9,6 +9,11 @@ import java.lang.instrument.Instrumentation;
  */
 public class ProxyAgent {
 
+    /**
+     * Java Agent 的入口
+     * @param args
+     * @param instrumentation
+     */
     public static void premain(String args, Instrumentation instrumentation){
         System.out.println("Run Proxy Agent");
         instrumentation.addTransformer(new AgentTransformer());

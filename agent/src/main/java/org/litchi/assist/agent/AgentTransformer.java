@@ -14,11 +14,12 @@ import java.security.ProtectionDomain;
  */
 public class AgentTransformer implements ClassFileTransformer {
     @Override
-    public byte[] transform(ClassLoader loader,
-                            String className,
+    public byte[] transform(ClassLoader loader, // 载入当前ClassLoader
+                            String className, // 载入当前Class ： java/util/List
                             Class<?> classBeingRedefined,
                             ProtectionDomain protectionDomain,
-                            byte[] classfileBuffer) throws IllegalClassFormatException {
+                            byte[] classfileBuffer // 以byte[] 呈现字节码数据
+    ) throws IllegalClassFormatException {
         // 全部Class内容，可根据情况自己过滤
         // System.out.println("transforming   "+className);
 
